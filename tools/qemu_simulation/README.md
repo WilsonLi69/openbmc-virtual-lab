@@ -38,14 +38,14 @@ This roadmap outlines the implementation phases from the ground up.
 - [x] **1.3** Unit test Python classes locally against a running QEMU instance to verify stable connectivity and timeout handling.
 
 ### Phase 2: Robot Framework Custom Library (Library Layer)
-- [ ] **2.1** Create `BmcQemuLibrary.py` wrapping the core Python clients.
-- [ ] **2.2** Implement Hardware Simulation Logic (e.g., `Simulate Cpld Power Sequence` with polling loops and non-blocking timeout mechanisms).
-- [ ] **2.3** Implement State Verification Logic (e.g., `Get Bmc Power State` for Robot Framework assertions).
+- [x] **2.1** Create `BmcQemuLibrary.py` wrapping the core Python clients.
+- [x] **2.2** Implement Hardware Simulation Logic (e.g., `Simulate Cpld Power Sequence` with polling loops and non-blocking timeout mechanisms).
+- [x] **2.3** Implement State Verification Logic (e.g., `Get Bmc Power State` for Robot Framework assertions).
 
 ### Phase 3: Robot Framework Test Suites (Test Layer)
-- [ ] **3.1** Author `power_sequence.robot` including Suite Setup (provisioning) and Teardown.
-- [ ] **3.2** Define specific Test Cases (e.g., Normal Power On Sequence, Power On Timeout Exception Handling).
-- [ ] **3.3** Execute test scripts locally and validate HTML report generation.
+- [x] **3.1** Author `power_sequence.robot` including Suite Setup (provisioning) and Teardown.
+- [x] **3.2** Define specific Test Cases (e.g., Normal Power On Sequence, Power On Timeout Exception Handling).
+- [x] **3.3** Execute test scripts locally and validate HTML report generation.
 
 ### Phase 4: CI/CD Integration & Environment Scripting
 - [ ] **4.1** Develop environment startup script (`start_qemu.sh`) with dynamic port allocation and headless execution (`-daemonize`).

@@ -33,9 +33,9 @@ The system is designed with a three-layer architecture to enforce the separation
 This roadmap outlines the implementation phases from the ground up.
 
 ### Phase 1: Core Python Control Libraries (Communication Layer)
-- [ ] **1.1** Implement `QMPClient` class (Handle socket connection, JSON parsing, `qom-get`/`qom-set` for AST2500 GPIOs).
-- [ ] **1.2** Implement `RedfishClient` class (Handle HTTPS requests, authentication, and payload formatting for BMC API).
-- [ ] **1.3** Unit test Python classes locally against a running QEMU instance to verify stable connectivity and timeout handling.
+- [x] **1.1** Implement `QMPClient` class (Handle socket connection, JSON parsing, `qom-get`/`qom-set` for AST2500 GPIOs).
+- [x] **1.2** Implement `RedfishClient` class (Handle HTTPS requests, authentication, and payload formatting for BMC API).
+- [x] **1.3** Unit test Python classes locally against a running QEMU instance to verify stable connectivity and timeout handling.
 
 ### Phase 2: Robot Framework Custom Library (Library Layer)
 - [ ] **2.1** Create `BmcQemuLibrary.py` wrapping the core Python clients.

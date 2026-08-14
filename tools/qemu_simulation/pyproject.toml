@@ -7,7 +7,9 @@ authors = [
     { name = "Wilson Li", email = "wilson.li@aicpic.com.tw" }
 ]
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "requests>=2.34.2",
+]
 
 [project.scripts]
 qemu-simulation = "qemu_simulation:main"

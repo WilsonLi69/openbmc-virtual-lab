@@ -1,0 +1,17 @@
+[project]
+name = "qemu-simulation"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Wilson Li", email = "wilson.li@aicpic.com.tw" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+qemu-simulation = "qemu_simulation:main"
+
+[build-system]
+requires = ["uv_build>=0.12.0,<0.13.0"]
+build-backend = "uv_build"

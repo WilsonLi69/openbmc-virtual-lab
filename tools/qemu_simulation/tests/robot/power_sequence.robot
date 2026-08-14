@@ -2,7 +2,7 @@
 Documentation     Automated HIL testing for BMC power sequence using QEMU.
 ...               This suite verifies the Redfish Power On command and the 
 ...               corresponding CPLD hardware signal handshakes.
-Library           BmcQemuLibrary.py
+Library           qemu_simulation.library.bmc_qemu_library
 Library           BuiltIn
 
 # Suite Setup runs once before any test cases start

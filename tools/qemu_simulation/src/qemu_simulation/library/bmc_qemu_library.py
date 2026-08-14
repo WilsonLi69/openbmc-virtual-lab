@@ -1,7 +1,8 @@
-import time
 from robot.api.deco import library, keyword
-from qmp_client import QMPClient
-from redfish_client import RedfishClient
+
+from qemu_simulation.clients.qmp_client import QMPClient
+from qemu_simulation.clients.redfish_client import RedfishClient
+from qemu_simulation.simulation.virtual_cpld import VirtualCpld
 
 
 @library(scope="GLOBAL", version="1.0")
@@ -100,30 +101,11 @@ class BmcQemuLibrary:
         if not self.qmp:
             raise RuntimeError("QMPClient is not initialized.")
 
-        timeout = float(timeout)
-        start_time = time.time()
-        button_asserted = False
+        cpld = VirtualCpld(self.qmp)
 
         print(f"Waiting up to {timeout}s for BMC to assert Power_Button (GPIOD0)...")
-
-        while (time.time() - start_time) < timeout:
-            btn_val = self.qmp.qom_get("/machine/soc/gpio", "gpioD0")
-
-            if btn_val is False or btn_val == 0:
-                print("Detected Power_Button signal pulled Low by BMC!")
-                button_asserted = True
-                break
-
-            time.sleep(0.5)
-
-        if not button_asserted:
-            # Raising an AssertionError causes the Robot Framework test case to Fail
-            raise AssertionError(
-                f"Timeout: BMC did not pull down Power_Button within {timeout} seconds."
-            )
+        cpld.wait_for_power_button(timeout)
 
         print("Simulating physical motherboard boot delay (1.5s)...")
-        time.sleep(1.5)
-
-        print("Asserting PGOOD signal (GPIOD6) High...")
-        self.qmp.qom_set("/machine/soc/gpio", "gpioD6", True)
+        cpld.assert_pgood()
+        print("Asserted PGOOD signal (GPIOD6) High.")

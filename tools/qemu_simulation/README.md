@@ -48,8 +48,8 @@ This roadmap outlines the implementation phases from the ground up.
 - [x] **3.3** Execute test scripts locally and validate HTML report generation.
 
 ### Phase 4: CI/CD Integration & Environment Scripting
-- [ ] **4.1** Develop environment startup script (`start_qemu.sh`) with dynamic port allocation and headless execution (`-daemonize`).
-- [ ] **4.2** Develop environment teardown script (`stop_qemu.sh`) for strict resource cleanup.
+- [x] **4.1** Develop environment startup script (`start_qemu.sh`) with dynamic port allocation and headless execution (`-daemonize`).
+- [x] **4.2** Develop environment teardown script (`stop_qemu.sh`) for strict resource cleanup.
 - [ ] **4.3** Author CI Pipeline Configuration (`.gitlab-ci.yml` or `.github/workflows/test.yml`) to orchestrate Yocto builds, test execution, and artifact archiving.
 
 ---
